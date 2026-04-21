@@ -1,0 +1,332 @@
+html {
+    scroll-behavior: smooth;
+}
+
+html,
+body {
+    overflow-x: hidden;
+    max-width: 100%;
+}
+
+body {
+    position: relative;
+}
+
+/* Hero Background with Parallax Illusion */
+.bg-hero {
+    background-image: linear-gradient(rgba(19, 157, 158, 0.4), rgba(51, 51, 51, 0.8)), url('images/ilika_entrance.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.bg-parallax {
+    background-image: linear-gradient(rgba(19, 157, 158, 0.8), rgba(19, 157, 158, 0.8)), url('images/ilika_3.png');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+
+.bg-pattern-white {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.94), rgba(255, 255, 255, 0.94)), url('images/ilika_1.png');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+
+.bg-pattern-light {
+    background-image: linear-gradient(rgba(248, 249, 250, 0.93), rgba(248, 249, 250, 0.93)), url('images/ilika_2.png');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+
+/* Micro-interactions */
+.hover-lift {
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.hover-lift:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(19, 157, 158, 0.2);
+}
+
+.icon-bounce:hover i {
+    animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+/* Custom Button Shine Effect */
+.btn-shine {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.btn-shine::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.3) 50%, rgba(255, 255, 255, 0) 100%);
+    transform: skewX(-25deg);
+    z-index: -1;
+    transition: all 0.7s ease;
+}
+
+.btn-shine:hover::after {
+    left: 200%;
+    transition: all 0.7s ease;
+}
+
+/* Brochure Card Styling */
+.brochure-card {
+    background-color: #139D9E;
+    color: white;
+    position: relative;
+    padding: 3rem 2rem;
+    z-index: 10;
+    transition: transform 0.5s ease, background-color 0.5s ease;
+}
+
+.brochure-card::before {
+    content: '';
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    right: 15px;
+    bottom: 15px;
+    border: 2px solid #F1417D;
+    z-index: -1;
+    transition: all 0.5s ease;
+}
+
+.brochure-card:hover {
+    transform: scale(1.02);
+    background-color: #0E7A7A;
+}
+
+.brochure-card:hover::before {
+    top: -10px;
+    left: -10px;
+    right: 10px;
+    bottom: 10px;
+    border-width: 3px;
+}
+
+.info-list li {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    padding-bottom: 0.75rem;
+    margin-bottom: 0.75rem;
+    position: relative;
+    transition: padding-left 0.3s ease;
+}
+
+.info-list li:hover {
+    padding-left: 5px;
+    color: #F1417D;
+}
+
+.info-list li:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.text-outline {
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: white;
+}
+
+.brochure-card:hover .text-outline {
+    -webkit-text-fill-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Staggered load for gradient text */
+.gradient-text {
+    background-image: linear-gradient(90deg, #139D9E, #F1417D);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Image gallery zoom */
+.zoom-img-container {
+    overflow: hidden;
+}
+
+.zoom-img-container img {
+    transition: transform 0.8s ease;
+}
+
+.zoom-img-container:hover img {
+    transform: scale(1.08);
+}
+
+/* Mobile font-size scaling (below Tailwind md breakpoint) */
+@media (max-width: 767px) {
+
+    /* Fixed backgrounds get sized to the viewport on iOS/Android,
+       which causes landscape images to appear massively zoomed and cropped.
+       Switch to scroll so the image is sized to its own section. */
+    .bg-hero,
+    .bg-parallax,
+    .bg-pattern-white,
+    .bg-pattern-light {
+        background-attachment: scroll;
+    }
+
+    /* Hero on mobile: stack two images — ilika_4 fills the top band (behind the
+       headings) and the entrance image fills the bottom band. The gradient layer
+       sits on top of both to keep the text legible. */
+    .bg-hero {
+        background-image:
+            linear-gradient(rgba(14, 122, 122, 0.45), rgba(51, 51, 51, 0.6)),
+            url('images/ilika_entrance.png'),
+            url('images/ilika_4.png');
+        background-size: cover, 100% 55%, 100% 45%;
+        background-position: center, center bottom, center top;
+        background-repeat: no-repeat, no-repeat, no-repeat;
+        background-color: #0E7A7A;
+    }
+
+    /* Hero */
+    .bg-hero h2 {
+        font-size: 1.75rem;
+        line-height: 1.15;
+        margin-bottom: 0.25rem;
+    }
+
+    .bg-hero .font-script {
+        font-size: 2rem;
+        line-height: 1.2;
+        margin-bottom: 1.25rem;
+    }
+
+    .bg-hero p {
+        font-size: 0.9rem;
+        line-height: 1.45;
+        margin-bottom: 1.5rem;
+    }
+
+    .bg-hero a.btn-shine {
+        padding: 0.7rem 1.75rem;
+        font-size: 0.75rem;
+    }
+
+    /* Section headings */
+    #about h2,
+    #amenities h2,
+    #gallery h2,
+    #location h2 {
+        font-size: 1.875rem;
+        line-height: 1.2;
+    }
+
+    #about .font-script,
+    #amenities .font-script,
+    #gallery .font-script,
+    #location .font-script {
+        font-size: 1.75rem;
+    }
+
+    #about p {
+        font-size: 0.95rem;
+    }
+
+    #about .zoom-img-container img {
+        height: auto;
+        max-height: 60vh;
+        object-fit: contain;
+        background-color: #f8f9fa;
+    }
+
+    /* Gallery: show full image instead of cropping */
+    #gallery .gallery-item img {
+        object-fit: contain;
+        background-color: #1a1a1a;
+    }
+
+    /* Brochure cards */
+    .brochure-card {
+        padding: 2rem 1.25rem;
+    }
+
+    .brochure-card h3 {
+        font-size: 1.35rem;
+    }
+
+    .brochure-card h3 .text-outline,
+    .brochure-card h2 {
+        font-size: 2rem;
+    }
+
+    .brochure-card .info-list li {
+        font-size: 0.8rem;
+    }
+
+    .brochure-card .info-list strong.text-base {
+        font-size: 0.875rem;
+    }
+
+    .brochure-card p {
+        font-size: 0.8rem;
+    }
+
+    /* Amenities clubhouse text */
+    #amenities h3 {
+        font-size: 1.625rem;
+    }
+
+    #amenities .text-lg {
+        font-size: 0.95rem;
+    }
+
+    #amenities h4 {
+        font-size: 1rem;
+    }
+
+    /* Parallax divider */
+    .bg-parallax h2 {
+        font-size: 1.875rem;
+        line-height: 1.2;
+    }
+
+    .bg-parallax .font-script {
+        font-size: 2rem;
+    }
+
+    /* Footer */
+    footer h1 {
+        font-size: 2.25rem;
+    }
+
+    footer .font-script {
+        font-size: 1.75rem;
+    }
+
+    footer p.text-base {
+        font-size: 0.875rem;
+    }
+
+    footer h3 {
+        font-size: 1.5rem;
+    }
+
+    footer .p-10 {
+        padding: 1.75rem;
+    }
+}
