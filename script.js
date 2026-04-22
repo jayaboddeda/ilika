@@ -132,12 +132,12 @@ window.addEventListener('scroll', () => {
     const inner = document.getElementById('header-inner');
     if (window.scrollY > 50) {
         header.classList.add('shadow-lg');
-        header.style.backgroundColor = 'rgba(255, 255, 255, 0.98)';
+        header.style.backgroundColor = 'rgba(245, 242, 236, 0.98)';
         inner.style.paddingTop = '6px';
         inner.style.paddingBottom = '6px';
     } else {
         header.classList.remove('shadow-lg');
-        header.style.backgroundColor = 'rgba(255, 255, 255, 0.9)';
+        header.style.backgroundColor = 'rgba(245, 242, 236, 0.9)';
         inner.style.paddingTop = '';
         inner.style.paddingBottom = '';
     }

@@ -257,7 +257,7 @@ body {
     /* Gallery: show full image instead of cropping */
     #gallery .gallery-item img {
         object-fit: contain;
-        background-color: #1a1a1a;
+        background-color: #224083;
     }
 
     /* Brochure cards */
