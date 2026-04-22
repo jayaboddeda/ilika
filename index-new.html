@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ilika | Four Colours. One Home.</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,700;0,9..144,900;1,9..144,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        ink: '#0F1021',
+                        paper: '#FAF7F2',
+                        logo: {
+                            pink: '#F1417D',
+                            magenta: '#D1308A',
+                            blue: '#2477C9',
+                            teal: '#139D9E'
+                        }
+                    },
+                    fontFamily: {
+                        display: ['Fraunces', 'serif'],
+                        body: ['"Space Grotesk"', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="styles-new.css">
+</head>
+
+<body class="font-body bg-paper text-ink antialiased selection:bg-logo-pink selection:text-white">
+
+    <!-- ======================= HEADER ======================= -->
+    <header id="header" class="fixed inset-x-0 top-0 z-50 transition-all duration-500">
+        <div id="header-inner" class="mx-auto max-w-[1400px] px-6 md:px-10 py-4 flex items-center justify-between transition-all duration-300">
+            <a href="#" class="flex items-center gap-3 group">
+                <img src="images/logo.png" alt="Ilika" class="h-10 w-auto transition-transform duration-500 group-hover:rotate-[22.5deg]">
+            </a>
+
+            <nav class="hidden lg:flex items-center gap-10 text-xs uppercase tracking-[0.18em] font-medium">
+                <a href="#story" class="nav-dot" data-color="pink">Story</a>
+                <a href="#numbers" class="nav-dot" data-color="magenta">Numbers</a>
+                <a href="#amenities" class="nav-dot" data-color="blue">Amenities</a>
+                <!-- <a href="#gallery" class="nav-dot" data-color="teal">Gallery</a> -->
+                <a href="#location" class="nav-dot" data-color="pink">Location</a>
+            </nav>
+
+            <a href="#contact"
+                class="hidden lg:inline-flex items-center gap-2 bg-ink text-paper px-5 py-3 text-xs uppercase tracking-[0.2em] font-semibold rounded-full hover:bg-logo-pink transition-colors">
+                Enquire
+                <span class="inline-block w-2 h-2 bg-logo-teal rounded-full"></span>
+            </a>
+
+            <button id="mobile-menu-toggle" aria-label="Open menu"
+                class="lg:hidden w-11 h-11 rounded-full bg-ink text-paper flex items-center justify-center">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu-overlay" class="fixed inset-0 z-[70] bg-ink/60 backdrop-blur-sm hidden opacity-0 transition-opacity duration-300 lg:hidden"></div>
+    <aside id="mobile-menu" aria-hidden="true"
+        class="fixed top-0 right-0 z-[80] h-full w-[88%] max-w-sm bg-paper shadow-2xl transform translate-x-full transition-transform duration-500 lg:hidden flex flex-col">
+        <div class="flex items-center justify-between px-6 py-5 border-b border-ink/10">
+            <span class="font-display text-2xl font-bold">ilika</span>
+            <button id="mobile-menu-close" aria-label="Close" class="w-10 h-10 rounded-full bg-ink text-paper flex items-center justify-center">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <nav class="flex-1 px-6 py-8 flex flex-col gap-1">
+            <a href="#story" class="mobile-nav-link group flex items-center justify-between py-4 border-b border-ink/10">
+                <span class="font-display text-2xl">Story</span>
+                <span class="w-3 h-3 rotate-45 bg-logo-pink"></span>
+            </a>
+            <a href="#numbers" class="mobile-nav-link group flex items-center justify-between py-4 border-b border-ink/10">
+                <span class="font-display text-2xl">Numbers</span>
+                <span class="w-3 h-3 rotate-45 bg-logo-magenta"></span>
+            </a>
+            <a href="#amenities" class="mobile-nav-link group flex items-center justify-between py-4 border-b border-ink/10">
+                <span class="font-display text-2xl">Amenities</span>
+                <span class="w-3 h-3 rotate-45 bg-logo-blue"></span>
+            </a>
+            <!-- <a href="#gallery" class="mobile-nav-link group flex items-center justify-between py-4 border-b border-ink/10">
+                <span class="font-display text-2xl">Gallery</span>
+                <span class="w-3 h-3 rotate-45 bg-logo-teal"></span>
+            </a> -->
+            <a href="#location" class="mobile-nav-link group flex items-center justify-between py-4 border-b border-ink/10">
+                <span class="font-display text-2xl">Location</span>
+                <span class="w-3 h-3 rotate-45 bg-logo-pink"></span>
+            </a>
+            <a href="#contact" class="mobile-nav-link mt-8 inline-flex items-center justify-center gap-2 bg-ink text-paper py-4 rounded-full text-xs uppercase tracking-[0.25em] font-bold">
+                Enquire Now
+            </a>
+        </nav>
+        <div class="px-6 py-6 bg-ink text-paper">
+            <p class="text-xs uppercase tracking-[0.3em] text-paper/60 mb-2">Sales</p>
+            <a href="tel:+918897468877" class="font-display text-2xl font-bold">+91 88974 68877</a>
+            <p class="text-xs text-paper/60 mt-2">Near Adibatla, Hyderabad</p>
+        </div>
+    </aside>
+
+    <!-- ======================= HERO ======================= -->
+    <section class="hero relative w-full bg-paper pt-[70px]">
+        <div class="hero__media">
+            <img src="images/ilika_entrance_1.png" alt="Ilika villa"
+                class="block w-full h-auto"
+                onerror="this.src='https://images.unsplash.com/photo-1613490493576-7fde63acd811?ixlib=rb-4.0.3&w=1920'">
+        </div>
+        <div class="hero__overlay"></div>
+
+        <div class="hero__content">
+            <p class="hero__kicker" data-aos="fade-up" data-aos-duration="900">
+                <span class="hero__dot hero__dot--pink"></span>
+                <span class="hero__dot hero__dot--magenta"></span>
+                <span class="hero__dot hero__dot--blue"></span>
+                <span class="hero__dot hero__dot--teal"></span>
+                Near Adibatla · Hyderabad
+            </p>
+            <h1 class="hero__title" data-aos="fade-up" data-aos-delay="150" data-aos-duration="1100">
+                Four <em>Colours.</em><br>
+                One <em>Home.</em>
+            </h1>
+            <p class="hero__subtitle" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000">
+                Luxury 4 BHK villas designed around light, space &amp; family — set on 10.28 acres of landscaped grounds.
+            </p>
+            <div class="hero__actions" data-aos="fade-up" data-aos-delay="450">
+                <a href="#contact" class="hero__cta">Enquire Now</a>
+                <a href="#story" class="hero__link">
+                    <span>Explore</span>
+                    <i class="fas fa-arrow-down"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================= STORY ======================= -->
+    <section id="story" class="py-24 md:py-32 relative overflow-hidden">
+        <div class="mx-auto max-w-[1400px] px-6 md:px-10 grid lg:grid-cols-12 gap-14 items-center">
+
+            <div class="lg:col-span-5 relative" data-aos="fade-right">
+                <div class="relative flex flex-col gap-5">
+                    <div class="rounded-[2rem] overflow-hidden bg-ink/5">
+                        <img src="images/ilika_2.png" alt="Ilika facade"
+                            class="w-full h-auto block"
+                            onerror="this.src='https://images.unsplash.com/photo-1613490493576-7fde63acd811?ixlib=rb-4.0.3&w=800'">
+                    </div>
+                    <div class="rounded-[2rem] overflow-hidden bg-ink/5">
+                        <img src="images/ilika_3.png" alt="Ilika interior"
+                            class="w-full h-auto block"
+                            onerror="this.src='https://images.unsplash.com/photo-1540555700478-4be289fbecef?ixlib=rb-4.0.3&w=800'">
+                    </div>
+                </div>
+            </div>
+
+            <div class="lg:col-span-7" data-aos="fade-left">
+                <p class="text-xs uppercase tracking-[0.3em] text-logo-pink font-semibold mb-5">
+                    <span class="inline-block w-8 h-px bg-logo-pink align-middle mr-3"></span>
+                    The story
+                </p>
+                <h2 class="font-display font-black leading-[0.95] tracking-tight text-[clamp(2.25rem,5.5vw,4.5rem)]">
+                    A home built around<br>
+                    <span class="italic">light,</span>
+                    <span class="italic text-logo-magenta">space</span> &
+                    <span class="italic text-logo-blue">family</span>.
+                </h2>
+
+                <p class="mt-8 text-lg text-ink/75 leading-relaxed max-w-xl">
+                    Every villa is a careful composition of proportion and warmth —
+                    11-foot ceilings, a 9.5-foot grand main door, sunlight that moves across every room,
+                    and layouts that make Monday mornings feel as good as Sunday evenings.
+                </p>
+
+                <!-- feature chips -->
+                <div class="mt-10 grid grid-cols-2 gap-4 max-w-2xl">
+                    <div class="feature-chip" data-colour="pink">
+                        <i class="fas fa-ruler-combined"></i>
+                        <div>
+                            <p class="font-display text-lg font-bold">2,857 sft</p>
+                            <p class="text-xs text-ink/60 uppercase tracking-wider">Starting size</p>
+                        </div>
+                    </div>
+                    <div class="feature-chip" data-colour="magenta">
+                        <i class="fas fa-door-open"></i>
+                        <div>
+                            <p class="font-display text-lg font-bold">9.5 ft</p>
+                            <p class="text-xs text-ink/60 uppercase tracking-wider">Grand main door</p>
+                        </div>
+                    </div>
+                    <div class="feature-chip" data-colour="blue">
+                        <i class="fas fa-arrows-up-to-line"></i>
+                        <div>
+                            <p class="font-display text-lg font-bold">11 ft</p>
+                            <p class="text-xs text-ink/60 uppercase tracking-wider">Ceiling height</p>
+                        </div>
+                    </div>
+                    <div class="feature-chip" data-colour="teal">
+                        <i class="fas fa-film"></i>
+                        <div>
+                            <p class="font-display text-lg font-bold">Home theatre</p>
+                            <p class="text-xs text-ink/60 uppercase tracking-wider">In every villa</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================= NUMBERS ======================= -->
+    <section id="numbers" class="py-24 md:py-32 bg-ink text-paper relative overflow-hidden">
+
+        <!-- giant bg word -->
+        <div class="absolute inset-x-0 top-10 text-[22vw] font-display font-black text-paper/[0.04] leading-none whitespace-nowrap pointer-events-none select-none text-center">
+            PROJECT
+        </div>
+
+        <div class="mx-auto max-w-[1400px] px-6 md:px-10 relative z-10">
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
+                <div data-aos="fade-up">
+                    <p class="text-xs uppercase tracking-[0.3em] text-logo-teal font-semibold mb-5">
+                        <span class="inline-block w-8 h-px bg-logo-teal align-middle mr-3"></span>
+                        By the numbers
+                    </p>
+                    <h2 class="font-display font-black leading-[0.95] tracking-tight text-[clamp(2.25rem,5.5vw,4.5rem)] max-w-3xl">
+                        Everything that makes <span class="italic text-logo-pink">Ilika</span> — measured.
+                    </h2>
+                </div>
+                <a href="#contact" class="self-start md:self-end inline-flex items-center gap-3 text-sm uppercase tracking-[0.2em] font-semibold border border-paper/30 hover:border-logo-pink hover:text-logo-pink px-5 py-3 rounded-full transition-colors">
+                    Full brochure
+                    <i class="fas fa-arrow-right text-xs"></i>
+                </a>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-0 border-t border-paper/15">
+                <!-- row 1 -->
+                <div class="stat-cell group" style="--c: #F1417D" data-aos="fade-up" data-aos-delay="0">
+                    <div class="stat-marker"></div>
+                    <p class="stat-label">Land parcel</p>
+                    <p class="stat-value">10.28<span class="stat-unit">acres</span></p>
+                </div>
+                <div class="stat-cell group" style="--c: #D1308A" data-aos="fade-up" data-aos-delay="80">
+                    <div class="stat-marker"></div>
+                    <p class="stat-label">Villas</p>
+                    <p class="stat-value">154</p>
+                </div>
+                <div class="stat-cell group" style="--c: #2477C9" data-aos="fade-up" data-aos-delay="160">
+                    <div class="stat-marker"></div>
+                    <p class="stat-label">Plot range</p>
+                    <p class="stat-value">150<span class="stat-unit text-sm">–</span>250<span class="stat-unit">sq.yds</span></p>
+                </div>
+                <div class="stat-cell group" style="--c: #139D9E" data-aos="fade-up" data-aos-delay="240">
+                    <div class="stat-marker"></div>
+                    <p class="stat-label">Clubhouse</p>
+                    <p class="stat-value">16.5k<span class="stat-unit">sft</span></p>
+                </div>
+                <!-- row 2 -->
+                <div class="stat-cell group" style="--c: #139D9E" data-aos="fade-up" data-aos-delay="0">
+                    <div class="stat-marker"></div>
+                    <p class="stat-label">Config</p>
+                    <p class="stat-value">4<span class="stat-unit">BHK+</span></p>
+                </div>
+                <div class="stat-cell group" style="--c: #2477C9" data-aos="fade-up" data-aos-delay="80">
+                    <div class="stat-marker"></div>
+                    <p class="stat-label">Starting size</p>
+                    <p class="stat-value">2857<span class="stat-unit">sft</span></p>
+                </div>
+                <div class="stat-cell group" style="--c: #D1308A" data-aos="fade-up" data-aos-delay="160">
+                    <div class="stat-marker"></div>
+                    <p class="stat-label">Ceiling height</p>
+                    <p class="stat-value">11<span class="stat-unit">ft</span></p>
+                </div>
+                <div class="stat-cell group" style="--c: #F1417D" data-aos="fade-up" data-aos-delay="240">
+                    <div class="stat-marker"></div>
+                    <p class="stat-label">Security</p>
+                    <p class="stat-value">24<span class="stat-unit text-base">×</span>7</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================= CLUBHOUSE BANNER ======================= -->
+    <section id="clubhouse-banner" class="clubhouse-banner js-zoom-reveal">
+        <div class="clubhouse-banner__media">
+            <img src="images/clubhouse.png" alt="Ilika clubhouse"
+                onerror="this.src='https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&w=1920'">
+        </div>
+        <div class="clubhouse-banner__overlay"></div>
+
+        <div class="clubhouse-banner__content">
+            <h2 class="clubhouse-banner__title">
+                <span class="clubhouse-word" data-aos="fade-right" data-aos-duration="1200" data-aos-easing="ease-out-cubic">Clubhouses</span>
+            </h2>
+            <p class="clubhouse-banner__kicker" data-aos="fade-up" data-aos-delay="400" data-aos-duration="900">
+                <span class="inline-block w-8 h-px bg-paper/70 align-middle mr-3"></span>
+                A 16,500 sft world of weekend, re-imagined
+            </p>
+        </div>
+    </section>
+
+    <!-- ======================= AMENITIES ======================= -->
+    <section id="amenities" class="py-24 md:py-32 bg-paper relative overflow-hidden">
+        <div class="mx-auto max-w-[1400px] px-6 md:px-10">
+
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
+                <div data-aos="fade-up">
+                    <p class="text-xs uppercase tracking-[0.3em] text-logo-magenta font-semibold mb-5">
+                        <span class="inline-block w-8 h-px bg-logo-magenta align-middle mr-3"></span>
+                        A clubhouse, reimagined
+                    </p>
+                    <h2 class="font-display font-black leading-[0.95] tracking-tight text-[clamp(2.25rem,5.5vw,4.5rem)] max-w-4xl">
+                        Sixteen-thousand square feet
+                        <span class="italic text-logo-blue">to come home to.</span>
+                    </h2>
+                </div>
+            </div>
+
+            <!-- amenity grid with color-rotating tiles -->
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-5">
+
+                <div class="amenity-tile tile-pink" data-aos="zoom-in" data-aos-delay="0">
+                    <i class="fas fa-shopping-basket"></i>
+                    <h4>Super Market</h4>
+                </div>
+                <div class="amenity-tile tile-magenta" data-aos="zoom-in" data-aos-delay="50">
+                    <i class="fas fa-stethoscope"></i>
+                    <h4>Clinic & Pharmacy</h4>
+                </div>
+                <div class="amenity-tile tile-blue" data-aos="zoom-in" data-aos-delay="100">
+                    <i class="fas fa-coffee"></i>
+                    <h4>Cafeteria</h4>
+                </div>
+                <div class="amenity-tile tile-teal" data-aos="zoom-in" data-aos-delay="150">
+                    <i class="fas fa-users"></i>
+                    <h4>Conference Room</h4>
+                </div>
+
+                <div class="amenity-tile tile-teal" data-aos="zoom-in" data-aos-delay="0">
+                    <i class="fas fa-spa"></i>
+                    <h4>Spa & Salon</h4>
+                </div>
+                <div class="amenity-tile tile-blue" data-aos="zoom-in" data-aos-delay="50">
+                    <i class="fas fa-bed"></i>
+                    <h4>Guest Rooms</h4>
+                </div>
+                <div class="amenity-tile tile-magenta" data-aos="zoom-in" data-aos-delay="100">
+                    <i class="fas fa-glass-cheers"></i>
+                    <h4>Banquet Hall</h4>
+                </div>
+                <div class="amenity-tile tile-pink" data-aos="zoom-in" data-aos-delay="150">
+                    <i class="fas fa-dumbbell"></i>
+                    <h4>Gymnasium</h4>
+                </div>
+
+                <div class="amenity-tile tile-pink" data-aos="zoom-in" data-aos-delay="0">
+                    <i class="fas fa-swimming-pool"></i>
+                    <h4>Pool & Aqua Gym</h4>
+                </div>
+                <div class="amenity-tile tile-magenta" data-aos="zoom-in" data-aos-delay="50">
+                    <i class="fas fa-child"></i>
+                    <h4>Kids Play Area</h4>
+                </div>
+                <div class="amenity-tile tile-blue" data-aos="zoom-in" data-aos-delay="100">
+                    <i class="fas fa-baseball-ball"></i>
+                    <h4>Outdoor Sports</h4>
+                </div>
+                <div class="amenity-tile tile-teal" data-aos="zoom-in" data-aos-delay="150">
+                    <i class="fas fa-charging-station"></i>
+                    <h4>Solar EV Charging</h4>
+                </div>
+            </div>
+
+            <!-- bottom feature row -->
+            <div class="mt-16 grid md:grid-cols-3 gap-5">
+                <div class="bg-ink text-paper rounded-3xl p-8 relative overflow-hidden" data-aos="fade-up">
+                    <span class="absolute -top-6 -right-6 w-20 h-20 rotate-45 bg-logo-pink"></span>
+                    <i class="fas fa-bus text-4xl text-logo-pink mb-6 relative z-10"></i>
+                    <h3 class="font-display text-2xl font-bold mb-3 relative z-10">Everyday shuttle</h3>
+                    <p class="text-paper/70 leading-relaxed relative z-10">Seamless daily connectivity to Gachibowli — no more long commutes.</p>
+                </div>
+                <div class="bg-logo-blue text-paper rounded-3xl p-8 relative overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+                    <span class="absolute -top-6 -right-6 w-20 h-20 rotate-45 bg-paper/20"></span>
+                    <i class="fas fa-shield-halved text-4xl mb-6 relative z-10"></i>
+                    <h3 class="font-display text-2xl font-bold mb-3 relative z-10">24×7 digital security</h3>
+                    <p class="text-paper/80 leading-relaxed relative z-10">CCTV, intercom and round-the-clock on-ground security teams.</p>
+                </div>
+                <div class="bg-logo-teal text-paper rounded-3xl p-8 relative overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+                    <span class="absolute -top-6 -right-6 w-20 h-20 rotate-45 bg-paper/20"></span>
+                    <i class="fas fa-leaf text-4xl mb-6 relative z-10"></i>
+                    <h3 class="font-display text-2xl font-bold mb-3 relative z-10">Green-ready</h3>
+                    <p class="text-paper/80 leading-relaxed relative z-10">Solar-powered EV charging and sustainable community infrastructure.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================= VILLAS BANNER ======================= -->
+    <section id="villas" class="villas-banner js-zoom-reveal">
+        <div class="villas-banner__media">
+            <img src="images/ilika_4.png" alt="Ilika villas"
+                onerror="this.src='https://images.unsplash.com/photo-1613490493576-7fde63acd811?ixlib=rb-4.0.3&w=1920'">
+        </div>
+        <div class="villas-banner__overlay"></div>
+
+        <div class="villas-banner__content">
+            <div class="villas-banner__top">
+                <h2 class="villas-banner__title" data-aos="fade-right" data-aos-duration="1100" data-aos-easing="ease-out-cubic">The Villas</h2>
+                <p class="villas-banner__subtitle" data-aos="fade-right" data-aos-delay="200" data-aos-duration="1100" data-aos-easing="ease-out-cubic">
+                    Luxury 4 BHK villas designed<br>for space, light &amp; family.
+                </p>
+            </div>
+            <div class="villas-banner__bottom">
+                <p class="villas-banner__body" data-aos="fade-up" data-aos-delay="300">
+                    Ilika offers thoughtfully planned 4 BHK villas with 11-foot ceilings, a 9.5-foot grand main door,
+                    sunlit layouts and a strong connection to the landscaped greens that weave through the community.
+                </p>
+                <p class="villas-banner__body" data-aos="fade-up" data-aos-delay="450">
+                    Plots range from 150 to 250 sq.yds with spacious 2,857+ sft layouts that prioritise privacy,
+                    comfort and everyday ease — making each home feel expansive, calm and truly personal.
+                </p>
+                <a href="#contact" class="villas-banner__cta" data-aos="fade-up" data-aos-delay="600">Enquire Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================= GALLERY (HIDDEN) ======================= -->
+    <section id="gallery" class="py-24 md:py-32 bg-ink text-paper relative overflow-hidden hidden">
+        <div class="mx-auto max-w-[1400px] px-6 md:px-10">
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14">
+                <div data-aos="fade-up">
+                    <p class="text-xs uppercase tracking-[0.3em] text-logo-pink font-semibold mb-5">
+                        <span class="inline-block w-8 h-px bg-logo-pink align-middle mr-3"></span>
+                        Gallery
+                    </p>
+                    <h2 class="font-display font-black leading-[0.95] tracking-tight text-[clamp(2.25rem,5.5vw,4.5rem)] max-w-3xl">
+                        A glimpse, in four <span class="italic text-logo-teal">colours</span>.
+                    </h2>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-12 gap-4 md:gap-5 auto-rows-[140px] md:auto-rows-[180px]">
+                <div class="gal-tile col-span-12 md:col-span-6 row-span-2 accent-pink" data-src="images/ilika_1.png" data-caption="Villa Facade" data-aos="fade-up">
+                    <img src="images/ilika_1.png" alt="Villa facade" onerror="this.src='https://images.unsplash.com/photo-1613490493576-7fde63acd811?ixlib=rb-4.0.3&w=1200'">
+                    <div class="gal-meta">
+                        <span class="gal-tag">Exterior</span>
+                        <h4>Villa Facade</h4>
+                    </div>
+                </div>
+                <div class="gal-tile col-span-6 md:col-span-3 row-span-1 accent-magenta" data-src="images/ilika_2.png" data-caption="Landscaped Grounds" data-aos="fade-up" data-aos-delay="100">
+                    <img src="images/ilika_2.png" alt="Grounds" onerror="this.src='https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?ixlib=rb-4.0.3&w=600'">
+                    <div class="gal-meta"><h4>Grounds</h4></div>
+                </div>
+                <div class="gal-tile col-span-6 md:col-span-3 row-span-1 accent-blue" data-src="images/ilika_3.png" data-caption="Clubhouse Lounge" data-aos="fade-up" data-aos-delay="150">
+                    <img src="images/ilika_3.png" alt="Lounge" onerror="this.src='https://images.unsplash.com/photo-1540555700478-4be289fbecef?ixlib=rb-4.0.3&w=600'">
+                    <div class="gal-meta"><h4>Clubhouse</h4></div>
+                </div>
+                <div class="gal-tile col-span-6 md:col-span-3 row-span-1 accent-teal" data-src="images/ilika_4.png" data-caption="Pool Deck" data-aos="fade-up" data-aos-delay="200">
+                    <img src="images/ilika_4.png" alt="Pool" onerror="this.src='https://images.unsplash.com/photo-1571902943202-507ec2618e8f?ixlib=rb-4.0.3&w=600'">
+                    <div class="gal-meta"><h4>Pool Deck</h4></div>
+                </div>
+                <div class="gal-tile col-span-6 md:col-span-3 row-span-1 accent-pink" data-src="images/ilika_5.png" data-caption="Living Space" data-aos="fade-up" data-aos-delay="250">
+                    <img src="images/ilika_5.png" alt="Living" onerror="this.src='https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&w=600'">
+                    <div class="gal-meta"><h4>Living Space</h4></div>
+                </div>
+                <div class="gal-tile col-span-12 md:col-span-6 row-span-2 accent-magenta" data-src="images/ilika_6.png" data-caption="Master Suite" data-aos="fade-up" data-aos-delay="100">
+                    <img src="images/ilika_6.png" alt="Master" onerror="this.src='https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&w=1200'">
+                    <div class="gal-meta">
+                        <span class="gal-tag">Interior</span>
+                        <h4>Master Suite</h4>
+                    </div>
+                </div>
+                <div class="gal-tile col-span-6 md:col-span-3 row-span-1 accent-blue" data-src="images/ilika_7.png" data-caption="Wellness" data-aos="fade-up" data-aos-delay="200">
+                    <img src="images/ilika_7.png" alt="Wellness" onerror="this.src='https://images.unsplash.com/photo-1534438327276-14e5300c3a48?ixlib=rb-4.0.3&w=600'">
+                    <div class="gal-meta"><h4>Wellness</h4></div>
+                </div>
+                <div class="gal-tile col-span-6 md:col-span-3 row-span-1 accent-teal" data-src="images/ilika_8.png" data-caption="Evening" data-aos="fade-up" data-aos-delay="250">
+                    <img src="images/ilika_8.png" alt="Evening" onerror="this.src='https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&w=600'">
+                    <div class="gal-meta"><h4>Evening</h4></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================= LOCATION ======================= -->
+    <section id="location" class="py-24 md:py-32 bg-paper relative overflow-hidden">
+        <div class="mx-auto max-w-[1400px] px-6 md:px-10">
+
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
+                <div data-aos="fade-up" class="max-w-none w-full">
+                    <p class="text-xs uppercase tracking-[0.3em] text-logo-blue font-semibold mb-5">
+                        <span class="inline-block w-8 h-px bg-logo-blue align-middle mr-3"></span>
+                        Location
+                    </p>
+                    <h2 class="font-display font-black leading-[0.95] tracking-tight text-[clamp(2.25rem,5.5vw,4.5rem)] lg:whitespace-nowrap">
+                        Minutes from <span class="italic text-logo-magenta">everywhere</span> that matters.
+                    </h2>
+                </div>
+            </div>
+
+            <div class="flex flex-col items-center gap-10">
+
+                <!-- map -->
+                <div class="w-full relative" data-aos="fade-up">
+                    <div class="relative rounded-[2rem] overflow-hidden shadow-2xl border-4 border-ink">
+                        <div class="absolute -top-5 -left-5 w-14 h-14 rotate-45 bg-logo-pink z-20 flex items-center justify-center">
+                            <i class="fas fa-map-pin -rotate-45 text-paper"></i>
+                        </div>
+                        <img src="images/ilika_map.png" alt="Master Location Matrix"
+                            class="w-full h-auto block cursor-zoom-in gallery-item"
+                            data-src="images/ilika_map.png" data-caption="Master Location Matrix"
+                            onerror="this.src='https://images.unsplash.com/photo-1524661135-423995f22d0b?ixlib=rb-4.0.3&w=1200'">
+                    </div>
+                </div>
+
+                <a href="#contact" data-aos="fade-up" class="inline-flex items-center gap-3 bg-ink text-paper pl-6 pr-2 py-2 rounded-full text-sm uppercase tracking-[0.2em] font-semibold group">
+                    Schedule a visit
+                    <span class="w-10 h-10 rounded-full bg-logo-pink flex items-center justify-center group-hover:rotate-45 transition-transform">
+                        <i class="fas fa-arrow-right text-xs"></i>
+                    </span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================= CONTACT ======================= -->
+    <section id="contact" class="py-24 md:py-32 bg-ink text-paper relative overflow-hidden">
+
+        <span class="absolute -top-24 -left-24 w-80 h-80 rotate-45 bg-logo-pink/10 blur-xl"></span>
+        <span class="absolute -bottom-24 -right-24 w-80 h-80 rotate-45 bg-logo-teal/10 blur-xl"></span>
+
+        <div class="mx-auto max-w-[1400px] px-6 md:px-10 grid lg:grid-cols-12 gap-14 lg:gap-10 items-start relative z-10">
+
+            <div class="lg:col-span-6" data-aos="fade-right">
+                <div class="flex items-center gap-3 mb-6">
+                    <span class="w-3 h-3 rotate-45 bg-logo-pink"></span>
+                    <span class="w-3 h-3 rotate-45 bg-logo-magenta"></span>
+                    <span class="w-3 h-3 rotate-45 bg-logo-blue"></span>
+                    <span class="w-3 h-3 rotate-45 bg-logo-teal"></span>
+                </div>
+                <h2 class="font-display font-black leading-[0.95] tracking-tight text-[clamp(2.5rem,6vw,5.5rem)]">
+                    Ready to come home?
+                </h2>
+                <p class="mt-8 text-lg text-paper/70 leading-relaxed max-w-lg">
+                    Leave your details and a property advisor will send you the full brochure,
+                    pricing sheet and set up a private site visit at your convenience.
+                </p>
+
+                <div class="mt-12 grid sm:grid-cols-2 gap-8 max-w-xl">
+                    <a href="tel:+918897468877" class="contact-card group">
+                        <span class="contact-dot" style="background:#F1417D"></span>
+                        <p class="text-xs uppercase tracking-[0.3em] text-paper/50 mb-1">Call</p>
+                        <p class="font-display text-xl font-bold group-hover:text-logo-pink transition-colors">+91 88974 68877</p>
+                    </a>
+                    <a href="https://wa.me/918897468877" target="_blank" class="contact-card group">
+                        <span class="contact-dot" style="background:#139D9E"></span>
+                        <p class="text-xs uppercase tracking-[0.3em] text-paper/50 mb-1">WhatsApp</p>
+                        <p class="font-display text-xl font-bold group-hover:text-logo-teal transition-colors">Chat with us</p>
+                    </a>
+                    <a href="mailto:sales@ilika-villas.com" class="contact-card group">
+                        <span class="contact-dot" style="background:#D1308A"></span>
+                        <p class="text-xs uppercase tracking-[0.3em] text-paper/50 mb-1">Email</p>
+                        <p class="font-display text-lg font-bold group-hover:text-logo-magenta transition-colors break-all">sales@ilika-villas.com</p>
+                    </a>
+                    <div class="contact-card">
+                        <span class="contact-dot" style="background:#2477C9"></span>
+                        <p class="text-xs uppercase tracking-[0.3em] text-paper/50 mb-1">Location</p>
+                        <p class="font-display text-xl font-bold">Near Adibatla<br>Hyderabad</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lg:col-span-6" data-aos="fade-left">
+                <form class="bg-paper text-ink rounded-[2rem] p-8 md:p-12 space-y-7 relative overflow-hidden shadow-2xl">
+                    <span class="absolute top-0 left-0 h-2 w-full bg-gradient-to-r from-logo-pink via-logo-magenta via-logo-blue to-logo-teal"></span>
+
+                    <h3 class="font-display text-3xl font-bold leading-tight">Register your interest</h3>
+
+                    <div class="relative">
+                        <input type="text" id="f_name" required class="form-input peer" placeholder=" ">
+                        <label for="f_name" class="form-label">Full Name *</label>
+                    </div>
+                    <div class="relative">
+                        <input type="tel" id="f_phone" required class="form-input peer" placeholder=" ">
+                        <label for="f_phone" class="form-label">Mobile Number *</label>
+                    </div>
+                    <div class="relative">
+                        <input type="email" id="f_email" class="form-input peer" placeholder=" ">
+                        <label for="f_email" class="form-label">Email Address</label>
+                    </div>
+                    <div class="relative">
+                        <select id="f_config" class="form-input peer bg-transparent cursor-pointer">
+                            <option value="" disabled selected>Interested in</option>
+                            <option>4BHK Villa – 150 sq.yds</option>
+                            <option>4BHK Villa – 200 sq.yds</option>
+                            <option>4BHK Villa – 250 sq.yds</option>
+                            <option>Not sure yet</option>
+                        </select>
+                        <label for="f_config" class="form-label">Villa Preference</label>
+                    </div>
+
+                    <button type="submit" class="w-full group relative overflow-hidden bg-ink text-paper py-5 rounded-full text-sm uppercase tracking-[0.3em] font-bold">
+                        <span class="relative z-10 group-hover:text-ink transition-colors duration-500">Submit details</span>
+                        <span class="absolute inset-0 bg-gradient-to-r from-logo-pink via-logo-magenta to-logo-teal translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-500"></span>
+                    </button>
+
+                    <p class="text-[11px] text-ink/50 leading-relaxed">
+                        By submitting, you agree to be contacted by an Ilika property advisor.
+                        We respect your privacy and never share your details.
+                    </p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================= FOOTER ======================= -->
+    <footer class="bg-paper text-ink border-t border-ink/10 py-14">
+        <div class="mx-auto max-w-[1400px] px-6 md:px-10">
+            <div class="grid md:grid-cols-12 gap-10 items-start">
+                <div class="md:col-span-5">
+                    <div class="flex items-center gap-3 mb-4">
+                        <img src="images/logo.png" alt="" class="h-10 w-auto">
+                    </div>
+                    <p class="text-sm text-ink/60 leading-relaxed max-w-sm">
+                        Bringing together smart design, spacious layouts and elegant living.
+                        An exclusive villa community near Adibatla, Hyderabad.
+                    </p>
+                </div>
+
+                <div class="md:col-span-4">
+                    <p class="text-xs text-ink/50 leading-relaxed">
+                        All images and details are for representational purposes only.
+                        The developer reserves the right to modify plans and specifications without prior notice.
+                    </p>
+                </div>
+
+                <div class="md:col-span-3 md:text-right">
+                    <div class="flex md:justify-end gap-3 mb-6">
+                        <a href="#" class="social-dot"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-dot"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-dot"><i class="fab fa-youtube"></i></a>
+                    </div>
+                    <p class="text-[11px] uppercase tracking-[0.3em] text-ink/50">&copy; 2026 Ilika Villas</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="fixed inset-0 z-[100] hidden items-center justify-center bg-ink/95 backdrop-blur-sm opacity-0 transition-opacity duration-300" role="dialog" aria-modal="true">
+        <button id="lb-close" class="absolute top-5 right-5 w-12 h-12 rounded-full bg-paper/10 hover:bg-logo-pink border border-paper/20 text-paper flex items-center justify-center"><i class="fas fa-times"></i></button>
+        <button id="lb-prev" class="absolute left-5 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-paper/10 hover:bg-logo-teal border border-paper/20 text-paper flex items-center justify-center"><i class="fas fa-chevron-left"></i></button>
+        <button id="lb-next" class="absolute right-5 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-paper/10 hover:bg-logo-teal border border-paper/20 text-paper flex items-center justify-center"><i class="fas fa-chevron-right"></i></button>
+        <div class="relative max-w-[92vw] max-h-[85vh] flex flex-col items-center">
+            <img id="lb-image" src="" alt="" class="max-w-[92vw] max-h-[75vh] object-contain rounded-xl">
+            <div class="mt-4 flex items-center gap-4 text-paper">
+                <span id="lb-counter" class="text-xs tracking-[0.3em] uppercase text-paper/60">1 / 1</span>
+                <span class="w-px h-4 bg-paper/20"></span>
+                <span id="lb-caption" class="font-display text-lg"></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- floating WA -->
+    <a href="https://wa.me/918897468877" target="_blank" class="fixed bottom-6 right-6 z-[60] w-14 h-14 rounded-full bg-[#25D366] text-white flex items-center justify-center shadow-xl hover:scale-110 transition-transform">
+        <i class="fab fa-whatsapp text-2xl"></i>
+    </a>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+    <script>
+        // Override script.js inline colours to match the new paper palette
+        (function () {
+            const header = document.getElementById('header');
+            if (!header) return;
+            function sync() {
+                const scrolled = window.scrollY > 50;
+                header.classList.toggle('scrolled', scrolled);
+                header.style.backgroundColor = scrolled
+                    ? 'rgba(250, 247, 242, 0.92)'
+                    : 'rgba(250, 247, 242, 0)';
+            }
+            window.addEventListener('scroll', sync, { passive: true });
+            sync();
+        })();
+
+        // Reveal banners: trigger slow zoom-out when a section enters view
+        (function () {
+            const banners = document.querySelectorAll('.js-zoom-reveal');
+            if (!banners.length) return;
+            if (!('IntersectionObserver' in window)) {
+                banners.forEach((b) => b.classList.add('in-view'));
+                return;
+            }
+            const io = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('in-view');
+                        io.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.2 });
+            banners.forEach((b) => io.observe(b));
+        })();
+    </script>
+</body>
+
+</html>
