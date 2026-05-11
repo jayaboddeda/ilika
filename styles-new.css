@@ -653,6 +653,146 @@ select.form-input option { color: #000000; background: #F5F2EC; }
     color: #ffffff;
 }
 
+/* ---------- Section CTA row ---------- */
+.cta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    justify-content: center;
+}
+.cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.85rem 1.4rem;
+    background: #ffffff;
+    color: #000000;
+    border: 1px solid rgba(26, 26, 26, 0.12);
+    font-size: 0.72rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    font-weight: 700;
+    transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+.cta-btn i { color: #1b8e31; font-size: 0.95rem; transition: color 0.25s ease; }
+.cta-btn:hover { background: #1b8e31; color: #ffffff; border-color: #1b8e31; }
+.cta-btn:hover i { color: #ffffff; }
+.cta-btn.cta-btn--dark {
+    background: transparent;
+    color: #ffffff;
+    border-color: rgba(255, 255, 255, 0.22);
+}
+.cta-btn.cta-btn--dark:hover { background: #1b8e31; border-color: #1b8e31; }
+
+/* ---------- Soft offer (slide-up after scroll) ---------- */
+#soft-offer {
+    position: fixed;
+    left: 1rem;
+    right: 1rem;
+    bottom: 1rem;
+    max-width: 420px;
+    margin-left: auto;
+    margin-right: auto;
+    background: #ffffff;
+    border: 1px solid rgba(26, 26, 26, 0.1);
+    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.18);
+    padding: 1rem 1.1rem;
+    z-index: 65;
+    transform: translateY(140%);
+    opacity: 0;
+    transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.4s ease;
+}
+#soft-offer.is-visible { transform: translateY(0); opacity: 1; }
+#soft-offer .so-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+}
+#soft-offer .so-kicker {
+    font-size: 0.62rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: #1b8e31;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+#soft-offer .so-kicker i { color: #25D366; font-size: 1rem; }
+#soft-offer .so-close {
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #F5F2EC;
+    color: #000;
+    border: 0;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+#soft-offer .so-close:hover { background: #224083; color: #fff; }
+#soft-offer p.so-title {
+    font-weight: 800;
+    font-size: 1.02rem;
+    line-height: 1.25;
+    margin-bottom: 0.85rem;
+    color: #000;
+}
+#soft-offer .so-form { display: flex; gap: 0.5rem; }
+#soft-offer input {
+    flex: 1;
+    padding: 0.75rem 0.9rem;
+    border: 1px solid rgba(26, 26, 26, 0.15);
+    font-size: 0.95rem;
+    outline: none;
+    background: #F5F2EC;
+    transition: border-color 0.2s ease, background 0.2s ease;
+}
+#soft-offer input:focus { border-color: #1b8e31; background: #fff; }
+#soft-offer button.so-submit {
+    background: #25D366;
+    color: #ffffff;
+    border: 0;
+    padding: 0 1.05rem;
+    font-size: 0.7rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+}
+#soft-offer button.so-submit:hover { background: #1b8e31; }
+
+/* ---------- Developer block ---------- */
+.developer-card {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    background: #ffffff;
+    border: 1px solid rgba(26, 26, 26, 0.08);
+    padding: 1.1rem 1.4rem;
+}
+.developer-card img { height: 48px; width: auto; flex-shrink: 0; }
+.developer-card .dev-meta p:first-child {
+    font-size: 0.65rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: rgba(0, 0, 0, 0.5);
+    font-weight: 600;
+    margin-bottom: 0.2rem;
+}
+.developer-card .dev-meta p:last-child {
+    font-weight: 700;
+    color: #000;
+    font-size: 0.95rem;
+}
+
 /* =====================================================
    Responsive
 ===================================================== */
@@ -667,4 +807,7 @@ select.form-input option { color: #000000; background: #F5F2EC; }
     .amenity-tile h4 { font-size: 0.85rem; }
     .gal-meta { transform: translateY(0); }
     .gal-meta { background: linear-gradient(to top, rgba(26, 26, 26, 0.9), transparent); }
+    #soft-offer { padding: 0.85rem 0.95rem; }
+    #soft-offer p.so-title { font-size: 0.9rem; }
+    #soft-offer button.so-submit { padding: 0 0.85rem; }
 }
