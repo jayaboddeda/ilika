@@ -149,7 +149,7 @@
                             onerror="this.src='https://images.unsplash.com/photo-1613490493576-7fde63acd811?ixlib=rb-4.0.3&w=800'">
                     </div>
                     <div class="rounded-none overflow-hidden bg-ink/5">
-                        <img src="images/ilika_3.png" alt="Ilika interior"
+                        <img src="images/ilika_day_street_view.png" alt="Ilika interior"
                             class="w-full h-auto block"
                             onerror="this.src='https://images.unsplash.com/photo-1540555700478-4be289fbecef?ixlib=rb-4.0.3&w=800'">
                     </div>
@@ -278,7 +278,7 @@
                 <div class="stat-cell group" style="--c: #1b8e31" data-aos="fade-up" data-aos-delay="320">
                     <div class="stat-marker"></div>
                     <p class="stat-label">Facing</p>
-                    <p class="stat-value">W<span class="stat-unit text-sm">&amp;</span>E<span class="stat-unit">villas</span></p>
+                    <p class="stat-value">East<span class="stat-unit text-sm">&amp;</span>West<span class="stat-unit">villas</span></p>
                 </div>
             </div>
 
@@ -323,7 +323,7 @@
         </div>
 
         <div class="clubhouse-banner__media">
-            <img src="images/ilika_clubhouse_dayview.png" alt="Ilika clubhouse"
+            <img src="images/ilika_3.png" alt="Ilika clubhouse"
                 onerror="this.src='https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&w=1920'">
         </div>
     </section>
@@ -619,6 +619,44 @@
         </div>
     </section>
 
+    <!-- ======================= MAP ======================= -->
+    <section id="map" class="py-24 md:py-32 bg-paper relative overflow-hidden">
+        <div class="mx-auto max-w-[1400px] px-6 md:px-10">
+
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+                <div data-aos="fade-up" class="max-w-none w-full">
+                    <p class="text-xs uppercase tracking-[0.3em] text-black font-semibold mb-5">
+                        <span class="inline-block w-8 h-px bg-accent align-middle mr-3"></span>
+                        Find Us
+                    </p>
+                    <h2 class="font-display font-black leading-[0.95] tracking-tight text-[clamp(1.75rem,3.8vw,3rem)]">
+                        Pinpoint <span class="text-black font-semibold">Ilika</span> on the map.
+                    </h2>
+                </div>
+            </div>
+
+            <div class="relative overflow-hidden shadow-2xl border-4 border-ink" data-aos="fade-up">
+                <div class="absolute -top-5 -left-5 w-14 h-14 rotate-45 bg-accent z-20 flex items-center justify-center pointer-events-none">
+                    <i class="fas fa-map-pin -rotate-45 text-white"></i>
+                </div>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3810.832709755964!2d78.54198800000002!3d17.226902999999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTfCsDEzJzM2LjkiTiA3OMKwMzInMzEuMiJF!5e0!3m2!1sen!2sin!4v1778566914935!5m2!1sen!2sin"
+                    title="Ilika location on Google Maps"
+                    class="block w-full h-[420px] md:h-[520px]"
+                    style="border:0;"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+
+            <div class="mt-10 flex justify-center" data-aos="fade-up">
+                <a href="https://www.google.com/maps?q=17.226903,78.541988" target="_blank" rel="noopener" class="cta-btn">
+                    <i class="fas fa-diamond-turn-right"></i> Open in Google Maps
+                </a>
+            </div>
+        </div>
+    </section>
+
     <!-- ======================= CONTACT ======================= -->
     <section id="contact" class="py-24 md:py-32 bg-ink text-white relative overflow-hidden">
 
@@ -669,13 +707,10 @@
                         <span class="inline-block w-8 h-px bg-accent align-middle mr-3"></span>
                         Developed by
                     </p>
-                    <div class="flex items-center gap-5 bg-white/5 border border-white/10 px-5 py-4">
-                        <img src="images/GAC.png" alt="GAC Infra" class="h-12 md:h-14 w-auto bg-white p-2">
-                        <div>
-                            <p class="font-display text-xl font-bold leading-tight">GAC Infra</p>
-                            <p class="text-xs uppercase tracking-[0.3em] text-white/60 mt-1">Building Trust</p>
-                        </div>
+                    <div class="inline-flex items-center justify-center bg-white px-7 py-4 border-l-4 border-accent shadow-2xl">
+                        <img src="images/GAC.png" alt="GAC Infra" class="h-10 md:h-12 w-auto">
                     </div>
+                    <p class="text-xs text-white/55 mt-4 tracking-[0.18em] uppercase">A legacy of building trust.</p>
                 </div>
             </div>
 
@@ -744,10 +779,6 @@
                     </p>
                     <div class="developer-card">
                         <img src="images/GAC.png" alt="GAC Infra">
-                        <div class="dev-meta">
-                            <p>Developer</p>
-                            <p>GAC Infra <span class="text-black/50 font-normal">· Building Trust</span></p>
-                        </div>
                     </div>
                     <p class="mt-4 text-xs text-black/50 leading-relaxed">
                         All images and details are for representational purposes only.

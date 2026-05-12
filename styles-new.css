@@ -663,18 +663,18 @@ select.form-input option { color: #000000; background: #F5F2EC; }
 .cta-btn {
     display: inline-flex;
     align-items: center;
-    gap: 0.75rem;
-    padding: 0.85rem 1.4rem;
+    gap: 0.9rem;
+    padding: 1.15rem 2rem;
     background: #ffffff;
     color: #000000;
     border: 1px solid rgba(26, 26, 26, 0.12);
-    font-size: 0.72rem;
+    font-size: 0.9rem;
     letter-spacing: 0.22em;
     text-transform: uppercase;
     font-weight: 700;
     transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
 }
-.cta-btn i { color: #1b8e31; font-size: 0.95rem; transition: color 0.25s ease; }
+.cta-btn i { color: #1b8e31; font-size: 1.15rem; transition: color 0.25s ease; }
 .cta-btn:hover { background: #1b8e31; color: #ffffff; border-color: #1b8e31; }
 .cta-btn:hover i { color: #ffffff; }
 .cta-btn.cta-btn--dark {
@@ -771,27 +771,16 @@ select.form-input option { color: #000000; background: #F5F2EC; }
 
 /* ---------- Developer block ---------- */
 .developer-card {
-    display: flex;
+    display: inline-flex;
     align-items: center;
-    gap: 1.25rem;
+    justify-content: center;
     background: #ffffff;
     border: 1px solid rgba(26, 26, 26, 0.08);
-    padding: 1.1rem 1.4rem;
+    border-left: 4px solid #1b8e31;
+    padding: 1rem 1.25rem;
+    box-shadow: 0 12px 30px -18px rgba(0, 0, 0, 0.35);
 }
-.developer-card img { height: 48px; width: auto; flex-shrink: 0; }
-.developer-card .dev-meta p:first-child {
-    font-size: 0.65rem;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    color: rgba(0, 0, 0, 0.5);
-    font-weight: 600;
-    margin-bottom: 0.2rem;
-}
-.developer-card .dev-meta p:last-child {
-    font-weight: 700;
-    color: #000;
-    font-size: 0.95rem;
-}
+.developer-card img { height: 42px; width: auto; flex-shrink: 0; display: block; }
 
 /* =====================================================
    Responsive
