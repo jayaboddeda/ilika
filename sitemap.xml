@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://ilikavillas.in/</loc>
+    <lastmod>2026-05-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://ilikavillas.in/images/ilika_entrance_1.png</image:loc>
+      <image:title>Ilika luxury 4 BHK villa entrance near Adibatla, Hyderabad</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://ilikavillas.in/images/ilika_day_street_view.png</image:loc>
+      <image:title>Ilika villas — street view</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://ilikavillas.in/images/ilika_1.png</image:loc>
+      <image:title>Ilika villa facade</image:title>
+    </image:image>
+  </url>
+</urlset>

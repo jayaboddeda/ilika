@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# Block dev/legacy assets from being indexed
+Disallow: /index_old.html
+
+Sitemap: https://ilikavillas.in/sitemap.xml
